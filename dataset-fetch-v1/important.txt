@@ -1,0 +1,23 @@
+About app.py:
+-------------
+1. Initializes and connects with google earth engine
+2. Define a point around which to get the S2 image
+3. Load the Sentinel-2 image collection and filter by date and location
+4. Get the first image in the filtered collection
+5. Select relevant bands (e.g., RGB bands: B4, B3, B2)
+6. Define the region (smaller bounding box around the point, e.g., 1 km buffer)
+7. Create an export task to Google Drive
+8. Start the export task and saves in Google Drive
+
+
+Once the image is available in Google Drive, it is downloaded manually as GeoTIFF file and can be displayed using show-image.py.
+
+
+About show-image.py:
+--------------------
+1. Path to the downloaded GeoTIFF file
+2. Open the image with rasterio
+3. Read the image bands (B4: red, B3: green, B2: blue)
+4. Stack the bands to create an RGB image
+5. Normalize the pixel values to 0-1 for display purposes (since Sentinel-2 values range from 0 to 10,000+)
+6. Plot the image using matplotlib

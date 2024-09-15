@@ -1,0 +1,5 @@
+earthengine-api
+numpy
+rasterio
+matplotlib
+pydrive
